@@ -15,7 +15,7 @@ def register(request):
             msg = 'user created'
             return redirect('login_view')
         else:
-            msg = 'form is not valid'
+            msg = 'form is not valid please'
     else:
         form = SignUpForm()
         
