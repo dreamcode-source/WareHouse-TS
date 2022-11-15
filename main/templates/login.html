@@ -32,14 +32,15 @@
         <div class="animate form login_form">
           <section class="login_content">
 
-            <span class="mb-0 text-muted">
+            
               {% if msg %}
-                  {{ msg | safe }}
-              {% else %}
-                  Login page
+              <div class="p-3 mb-2 bg-danger text-white"></span>
+              {{ msg | safe }}
+              </div>
+               {% else %}
+              
               {% endif %}
-            </span>
-
+            
             <form method="post">
               <h1>Login Form</h1>
 

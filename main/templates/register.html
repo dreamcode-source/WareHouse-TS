@@ -19,6 +19,16 @@
     <!-- Animate.css -->
     <link href="{% static 'vendors/animate.css/animate.min.css' %}" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Custom Theme Style -->
     <link href="{% static 'build/css/custom.min.css' %}" rel="stylesheet">
   </head>
@@ -33,20 +43,56 @@
 
       
           <section class="login_content">
-            <form>
+            
+
+            <span class="text-error">{{ form.errors }}</span>
+            
+            <form method="post">
+
+              {% csrf_token %}
               <h1>Create Account</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <label for="">Username</label>
+                {{ form.username }}
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                <label for="">Email</label>
+                {{ form.email }}
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <label for="">Password</label>
+                {{ form.password1 }}
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+                <label for="">Confirm Password</label>
+                {{ form.password2 }}
               </div>
+              <div>
+
+                <div class="d-flex mb-5 align-items-center">
+                  <label class="control control--checkbox mb-0"><span class="caption">Admin</span>
+                      {{ form.is_admin }}
+                    <div class="control__indicator"></div>
+                  </label>
+                </div>
+                <div class="d-flex mb-5 align-items-center">
+                  <label class="control control--checkbox mb-0"><span class="caption">customer</span>
+                      {{ form.is_customer }}
+                    <div class="control__indicator"></div>
+                  </label>
+                </div>
+                <div class="d-flex mb-5 align-items-center">
+                  <label class="control control--checkbox mb-0"><span class="caption">employee</span>
+                      {{ form.is_employee }}
+                    <div class="control__indicator"></div>
+                  </label>
+                </div>
+                <br><br><br>
+             
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+              </div>
+
+              
 
               <div class="clearfix"></div>
 
