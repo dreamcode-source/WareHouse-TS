@@ -1,0 +1,172 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+  Admin Page
+{% endblock title %}
+
+{% block content %}
+
+<div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Sales <small></small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <button class="btn btn-sm btn-primary" type="button" data-toggle="modal" data-target="#varyModal">New Entry</button> 
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <!-- {{-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Add User</a>
+                            <a class="dropdown-item" href="#">Settings 2</a>
+                          </div>
+                      </li> --}} -->
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+                            <div class="card-box table-responsive">
+                   
+                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>Item Name</th>
+                          <th>Quantity</th>
+                          <th>price</th>
+                          <th>Customer</th>
+                          <th>Transaction Date</th>
+                          <th>Authorized By</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        <tr>
+                          <td>Pura Cranberry 24x200ml</td>
+                          <td>40</td>
+                          <td>40,000</td>
+                          <td>Rositta Enterprises</td>
+                          <td>2011/04/25</td>
+                          <td>Admin - Ernest</td>
+                          <td><a class = "btn btn-primary btn-sm" href="#">view</a> </td>
+                        </tr>
+                        <tr>
+                          <td>Pura Cranberry 24x200ml</td>
+                          <td>5</td>
+                          <td>10,000</td>
+                          <td>Nelson wholesale</td>
+                          <td>2011/07/25</td>
+                          <td>Admin - Ernest</td>
+                          <td><a class = "btn btn-primary btn-sm" href="#">view</a> </td>
+                        </tr>
+                        <tr>
+                          <td>Pura Cranberry 24x200ml</td>
+                          <td>7</td>
+                          <td>17,500</td>
+                          <td>Ashco Distributors</td>
+                          <td>2009/01/12</td>
+                          <td>Admin - Ernest</td>
+                          <td><a class = "btn btn-primary btn-sm" href="#">view</a> </td>
+                        </tr>
+                        <tr>
+                          <td>Pura Cranberry 24x200ml</td>
+                          <td>10</td>
+                          <td>5,000</td>
+                          <td>Chipiku</td>
+                          <td>2012/03/29</td>
+                          <td>Admin - Ernest</td>
+                          <td><a class = "btn btn-primary btn-sm" href="#">view</a></td>
+                        </tr>
+                        
+                        <div class="modal fade" id="varyModal" tabindex="-1" role="dialog" aria-labelledby="varyModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="varyModalLabel">New Sales</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/" method="POST">
+                                    @csrf
+                                        <div class="row">
+
+                                          <div class="form-group col-md-12">
+                                            <label for="recipient-name" class="col-form-label">Item Name</label>
+                                            <input type="text" name="category" class="form-control" id="cat" required>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                          <label for="recipient-name" class="col-form-label">Quantity</label>
+                                          <input type="number" name="category" class="form-control" id="cat" required>
+                                      </div>
+
+                                          
+
+                                            <div class="form-group col-md-12">
+                                              <label for="recipient-name" class="col-form-label">Customer</label>
+                                              <select class="form-control required select2" name="type" id="validationSelect1"
+                                                  required>
+                                                  <option value="">select customer</option>
+                                                  
+                                                      <option value="">customer 1</option>
+                                                      <option value="">customer 2</option>
+                                                      <option value="">customer 3</option>
+                                                      <option value="">customer 4</option>
+                                                 
+                                              </select>
+                                          </div>
+
+                                          <div class="form-group col-md-12">
+                                            <label for="recipient-name" class="col-form-label">From Warehouse</label>
+                                            <select class="form-control required select2" name="type" id="validationSelect1"
+                                                required>
+                                                <option value="">select warehouse</option>
+                                                
+                                                <option value="">warehouse 1</option>
+                                                <option value="">warehouse 2</option>
+                                                <option value="">warehouse 3</option>
+                                                <option value="">warehouse 4</option>
+                                               
+                                            </select>
+                                        </div>
+
+                                          <div class="form-group col-md-12">
+                                            <label for="recipient-name" class="col-form-label">Price (MWK)</label>
+                                            <input type="number" name="category" class="form-control" id="cat" required>
+                                        </div>
+
+                                    
+
+                                          
+                                        </div>
+                                        <input type="number" name="cid" id="eid" hidden>
+                                        <button name="edit" class="btn mb-2 btn-info">Create</button>
+                                    </form>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                        
+                        
+
+                      </tbody>
+                    </table>
+                  </div>
+                  </div>
+              </div>
+            </div>
+
+{% endblock content %}

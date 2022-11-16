@@ -70,17 +70,17 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href=""><i class="fa fa-home"></i> Home <span></span></a>
+                  <li><a href="{% url 'admini' %}"><i class="fa fa-home"></i> Home <span></span></a>
                    
                   </li>
                 </ul>
                 <ul class="nav side-menu">
-                    <li><a href=""><i class="fa fa-users"></i> Users <span></span></a>
+                    <li><a href="{% url 'create_user' %}"><i class="fa fa-users"></i> Users <span></span></a>
                      
                     </li>
                   </ul>
                   <ul class="nav side-menu">
-                    <li><a href=""><i class="fa fa-home"></i> Master of Goods <span></span></a>
+                    <li><a href="{% url 'goods_master' %}"><i class="fa fa-home"></i> Master of Goods <span></span></a>
                      
                     </li>
                   </ul>
@@ -88,11 +88,11 @@
                   <li><a><i class="fa fa-edit"></i> Transaction <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      
-                      <li><a href="">Incoming Goods</a></li>
-                      <li><a href="">Outgoing Goods</a></li>
+                      <li><a href="{% url 'incoming_goods' %}">Incoming Goods</a></li>
+                      <li><a href="{% url 'outgoing_goods' %}">Outgoing Goods</a></li>
                       <!-- <li><a href="#3">Adjustments</a></li>  -->
-                      <li><a href="">Sales</a></li>
-                      <li><a href="">Expenses</a></li>
+                      <li><a href="{% url 'sales' %}">Sales</a></li>
+                      <li><a href="{% url 'expenses' %}">Expenses</a></li>
                     </ul>
                   </li>
                  
@@ -105,10 +105,10 @@
                   </li>
                   <li><a><i class="fa fa-clone"></i>Master List <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">Supplier</a></li>
-                      <li><a href="">Customer</a></li>
-                      <li><a href="">Warehouses</a></li>
-                      <li><a href="">Shops</a></li>
+                      <li><a href="{% url 'supplier' %}">Supplier</a></li>
+                      <li><a href="{% url 'customer' %}">Customer</a></li>
+                      <li><a href="{% url 'warehouse' %}">Warehouses</a></li>
+                      <li><a href="{% url 'shops' %}">Shops</a></li>
                     </ul>
                     <div class="menu_section">
                        
@@ -165,7 +165,7 @@
                         <span>Settings</span>
                       </a>
                   <a class="dropdown-item"  href="javascript:;">Help</a>
-                    <a class="dropdown-item"  href=""><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <a class="dropdown-item"  href="{% url 'logout' %}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
 
